@@ -1,0 +1,137 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6" (click)="syncRequests()">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">content_copy</i>
+                        </div>
+                        <p class="card-category">Sync Request</p>
+                        <h3 class="card-title" *ngIf="totalRequest">{{totalRequest || 0}}
+                            <!-- <small>per</small> -->
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons text-danger">warning</i>Get More Space...
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">store</i>
+                        </div>
+                        <p class="card-category">Approved</p>
+                        <h3 class="card-title" *ngIf="approvedCount">{{approvedCount || 0}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-danger card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">info_outline</i>
+                        </div>
+                        <p class="card-category">Reject</p>
+                        <h3 class="card-title" *ngIf="pendingCount">{{rejectCount || 0}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">local_offer</i> Tracked from Github
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="fa fa-twitter"></i>
+                        </div>
+                        <p class="card-category">Pending</p>
+                        <h3 class="card-title">{{pendingCount || 0}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Just Updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Sync Requested Data</h4>
+                        <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    
+                                    <th class="text-center">
+                                        Whom
+                                    </th>
+                                    <th class="text-center">
+                                        What
+                                    </th>
+                                    <th class="text-center">
+                                        When
+                                    </th>
+                                    <th class="text-center">
+                                        Reason
+                                    </th>
+                                    <th class="text-center">
+                                        Status
+                                    </th>
+                                    <th class="text-center">
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let syncrequest of syncRequestedData">
+                                        <td class="text-center">
+                                            {{syncrequest.whom}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{syncrequest.what}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{syncrequest.when | date:'dd-MM-yyyy'}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{syncrequest.reason}}
+                                        </td>
+                                        <td class="text-center">
+                                            {{syncrequest.status}}
+                                        </td>
+                                       
+                                        <td class="text-center">
+                                            <span>
+                                                <a target="_blank" class="btn btn-round btn-fill btn-success" (click)="Approved(syncrequest)" >Approved</a>
+                                                <a target="_blank" class="btn btn-round btn-fill btn-danger" (click)="Reject(syncrequest)">Reject</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

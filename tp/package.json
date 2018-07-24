@@ -1,0 +1,22 @@
+{
+  "name": "tp",
+  "version": "1.0.0",
+  "description": "transaction proccesser with rest api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "not",
+    "yet"
+  ],
+  "author": "sumanth reddy",
+  "license": "ISC",
+  "dependencies": {
+    "cbor": "^4.1.1",
+    "dotenv": "^6.0.0",
+    "nodemon": "^1.18.3",
+    "sawtooth-sdk": "^1.0.4"
+  }
+}

@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>
+    Add Beneficiary</h1>
+<hr>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field>
+                <input name="whom" type="text" matInput placeholder="Name" [(ngModel)]="data.name" required>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field>
+                <input name="adhar" type="number" matInput placeholder="Adhar No" [(ngModel)]="data.adhar" required>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field class="example-full-width">
+                <mat-select name='status' placeholder="Gender"  [(ngModel)]="data.gender" required>
+                    <mat-option  value="male">Male</mat-option>
+                    <mat-option  value="female">Female</mat-option>
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                <input name="age" type="number" matInput placeholder="Age" [(ngModel)]="data.age" required>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field>
+                <input name="district" type="text" matInput placeholder="District" [(ngModel)]="data.district" required>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <mat-form-field>
+                <textarea name="address" matInput placeholder="Address" [(ngModel)]="data.address" required></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    <!-- </div> -->
+    <!-- <textarea name="why" matInput placeholder="Address" ></textarea> -->
+</div>
+<div mat-dialog-actions class="pull-right">
+
+    <button type="button" class="btn btn-danger" (click)="addBeneficiary()">Submit</button>
+    <button mat-button class="btn" (click)="onNoClick()">Cancel</button>
+
+</div>

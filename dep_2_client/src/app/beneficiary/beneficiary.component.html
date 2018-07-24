@@ -1,0 +1,66 @@
+
+<div class="main-content">
+       
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <div class="card-title "><h4 >Beneficiary Data</h4>
+                        <button type="button" class="btn btn-default pull-right  card-title-button" style="background-color: white;color: red" (click)="addBeneficiaryDialog()">Add+</button></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Gender
+                                    </th>
+                                    <th>
+                                        Age
+                                    </th>
+                                    <th>
+                                        City
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let benificary of beniFiciaryList">
+                                        <td>
+                                            {{benificary.adhar}}
+                                        </td>
+                                        <td>
+                                            {{benificary.name}}
+                                        </td>
+                                        <td>
+                                            {{benificary.gender}}
+                                        </td>
+                                        <td>
+                                            {{benificary.age}}
+                                        </td>
+                                        <td>
+                                            {{benificary.address}}
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <a target="_blank" class="btn btn-round btn-fill btn-danger" style="color: white"  (click)="sync(benificary)">sync</a>
+                                            </span>
+                                        </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
