@@ -24,6 +24,6 @@
     "express": "^4.16.3",
     "fs": "0.0.1-security",
     "request": "^2.87.0",
-    "sawtooth-sdk": "^1.0.4"
+    "sawtooth-sdk": "^1.1.1"
   }
 }
