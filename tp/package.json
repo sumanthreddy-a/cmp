@@ -17,6 +17,6 @@
     "cbor": "^4.1.1",
     "dotenv": "^6.0.0",
     "nodemon": "^1.18.3",
-    "sawtooth-sdk": "^1.0.4"
+    "sawtooth-sdk": "^1.1.1"
   }
 }
